@@ -28,8 +28,6 @@ class Api::V1::PostsController < ApplicationController
 
     posts.uniq! { |el| el['id'] }
 
-    puts posts.length
-
     sort_by = request.query_parameters['sortBy'] || 'id'
     direction = request.query_parameters['direction'] || 'asc'
     # Rails.logger.warn "sort_by=#{sortBy}"
